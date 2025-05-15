@@ -14,7 +14,7 @@ model_name = "./SmolVLM-256M-Instruct" #load from local file
 print(f"Loading model from {model_name}...")
 processor = AutoProcessor.from_pretrained(model_name)
 model = AutoModelForVision2Seq.from_pretrained(
-    "HuggingFaceTB/SmolVLM-256M-Instruct",
+    model_name,
     torch_dtype=torch.bfloat16,
     _attn_implementation="flash_attention_2",
     device_map="cuda"  # force on GPU
